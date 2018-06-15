@@ -27,7 +27,8 @@ public class Menu {
         
         teclado = new Scanner(System.in);
         
-        System.out.println("*** BIENVENIDOS AL HIMALAYA ***");
+        System.out.println("*** BIENVENIDOS ***");
+        System.out.println("**A LA GRIETA DEL INVOCADOR**");
         
         menuInicio();
         menuJuego();
@@ -37,8 +38,8 @@ public class Menu {
     }
     
     public static void menuInicio(){
-        System.out.println("1. Jugar");
-        System.out.println("2. Salir");
+        System.out.println("1. Comenar Partida");
+        System.out.println("2. Salir del juego");
         int opc;
         do{
             opc = teclado.nextInt();
@@ -64,9 +65,9 @@ public class Menu {
         for (int i = 0; i < 2; i++){ 
             int p = i+1;
             System.out.println("Player " + p);
-            System.out.print("Ingrese su nombre: ");
+            System.out.print("Ingrese su nombre de usario");
             nomUser = teclado.nextLine();
-            System.out.println("Elige tu raza");
+            System.out.println("Elige un Reino para luchar");
             raza = menuCriatura();
             teclado.nextLine();
             
@@ -82,24 +83,24 @@ public class Menu {
     }
 
     private static String menuCriatura() {
-        System.out.println("1. Criatura Magica");
+        System.out.println("1. Orco");
         System.out.println("2. Elfo");
-        System.out.println("3. Hechicero");
+        System.out.println("3. Mago");
         
         int opc;
          do{
-             System.out.print("Ingrese opcion: ");
+             System.out.print("Escoge un reino para la batalla");
             opc = teclado.nextInt();
             teclado.next();
             switch(opc){
                 case 1:
-                    return "Criatura Magica";
+                    return "Orco";
                 case 2:
                     return "Elfos";
                 case 3:
-                    return "Hechiceros";
+                    return "Mago";
                 default:
-                    System.out.println("Raza invalida");
+                    System.out.println("Esa raza no existe, por favor intenta otra vez");
         }
         }while(opc > 0 && opc < 4);
          
@@ -111,7 +112,7 @@ public class Menu {
         Ayuntamiento ayuntaU1 = new Ayuntamiento();
         Ayuntamiento ayuntaU2 = new Ayuntamiento();
         
-        System.out.println("\nINICIA EL JUEGO");
+        System.out.println("\nQUE COMIENCE LA PARTIDA");
         
         while(validarGanador == false){
             if (turno){
